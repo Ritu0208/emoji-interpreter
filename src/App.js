@@ -27,8 +27,10 @@ export default function App() {
         meaning = "We don't have transaltion of this emoji in our dictionary.";
       }
       setMeaning(meaning);
-    } else {
+    }else if(userInput === ""){
       setMeaning("");
+    }else {
+      setMeaning("We don't have transaltion of this emoji in our dictionary.");
     }
   }
 
