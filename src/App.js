@@ -22,10 +22,14 @@ export default function App() {
     var userInput = event.target.value;
     var meaning = emojiDictionary[userInput];
 
-    if (meaning === undefined) {
-      meaning = "We don't have transaltion of this emoji in our dictionary.";
+    if (userInput in emojiDictionary) {
+      if (meaning === undefined) {
+        meaning = "We don't have transaltion of this emoji in our dictionary.";
+      }
+      setMeaning(meaning);
+    } else {
+      setMeaning("");
     }
-    setMeaning(meaning);
   }
 
   function emojiClickHandler(emoji) {
